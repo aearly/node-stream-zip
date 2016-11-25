@@ -910,7 +910,7 @@ EntryVerifyStream.prototype._transform = function(data, encoding, callback) {
         this.verify.data(data);
         callback(null, data);
     } catch (err) {
-        callback(err, data);
+        this.emit('error', err);
     }
 };
 
